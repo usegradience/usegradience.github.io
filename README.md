@@ -1,2 +1,1 @@
-# usegradience.github.io
-Let's use @GradienceTeam
+# Let's use @GradienceTeam
