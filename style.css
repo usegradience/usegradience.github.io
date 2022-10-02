@@ -1,0 +1,404 @@
+/* COPYRIGHT: GNOME OS */
+/* https://gitlab.gnome.org/Teams/Releng/gnome-os-site/-/blob/master/style.css */
+
+/* RESET & TYPOGRAPHY */
+:root {
+    --blue1: rgb(153, 193, 241);
+    --blue2: rgb(98, 160, 234);
+    --blue3: rgb(53, 132, 228);
+    --blue4: rgb(28, 113, 216);
+    --blue5: rgb(26, 95, 180);
+    --green1: rgb(143, 240, 164);
+    --green2: rgb(87, 227, 137);
+    --green3: rgb(51, 209, 122);
+    --green4: rgb(46, 194, 126);
+    --green5: rgb(38, 162, 105);
+    --yellow1: rgb(249, 240, 107);
+    --yellow2: rgb(248, 228, 92);
+    --yellow3: rgb(246, 211, 45);
+    --yellow4: rgb(245, 194, 17);
+    --yellow5: rgb(229, 165, 10);
+    --orange1: rgb(255, 190, 111);
+    --orange2: rgb(255, 163, 72);
+    --orange3: rgb(255, 120, 0);
+    --orange4: rgb(230, 97, 0);
+    --orange5: rgb(198, 70, 0);
+    --red1: rgb(246, 97, 81);
+    --red2: rgb(237, 51, 59);
+    --red3: rgb(224, 27, 36);
+    --red4: rgb(192, 28, 40);
+    --red5: rgb(165, 29, 45);
+    --purple1: rgb(220, 138, 221);
+    --purple2: rgb(192, 97, 203);
+    --purple3: rgb(145, 65, 172);
+    --purple4: rgb(129, 61, 156);
+    --purple5: rgb(97, 53, 131);
+    --brown1: rgb(205, 171, 143);
+    --brown2: rgb(181, 131, 90);
+    --brown3: rgb(152, 106, 68);
+    --brown4: rgb(134, 94, 60);
+    --brown5: rgb(99, 69, 44);
+    --light1: rgb(255, 255, 255);
+    --light2: rgb(246, 245, 244);
+    --light3: rgb(222, 221, 218);
+    --light4: rgb(192, 191, 188);
+    --light5: rgb(154, 153, 150);
+    --dark1: rgb(119, 118, 123);
+    --dark2: rgb(94, 92, 100);
+    --dark3: rgb(61, 56, 70);
+    --dark4: rgb(36, 31, 49);
+    --dark5: rgb(0, 0, 0);
+    --text: #f6f5f4;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* FONTS */
+@font-face {
+    font-family: "Cantarell";
+    font-style: normal;
+    font-weight: 800;
+    src: local("Cantarell Extra Bold"), local("Cantarell-ExtraBold"), url(fonts/cantarell-extra-bold-latin.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+@font-face {
+    font-family: "Cantarell";
+    font-style: normal;
+    font-weight: 600;
+    src: local("Cantarell Bold"), local("Cantarell-Bold"), url(fonts/cantarell-bold-latin.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+@font-face {
+    font-family: "Cantarell";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Cantarell Regular"), local("Cantarell-Regular"), url(fonts/cantarell-regular-latin.woff2) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Cantarell", -apple-system, BlinkMacSystemFont, "Helvetica", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    word-spacing: -0.01em;
+}
+
+@media (min-width: 700px) {
+
+    html,
+    body {
+        font-size: 18px;
+    }
+}
+
+body {
+    color: var(--text);
+    background: linear-gradient(90deg, #990c0c 0%, #000000 100%);
+    /* ⇩⇩ put footer at the bottom for short pages, such as the 404 ⇩⇩ */
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: minmax(auto, 1fr);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+a {
+    color: #62a0ea;
+}
+
+/* LAYOUT */
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+background: none;
+opacity: 0.6;
+color: white;
+border: 2px solid #c0bfbc85;
+}
+
+.disabled-button:hover {
+    transform: none;
+    cursor: default;
+}
+
+.warning-label {
+    color: #f6d32d;
+    font-weight: 600;
+}
+
+.icon-shadow {
+    filter:
+        /* Sharp drop shadow */
+        drop-shadow(0 0.08rem 0.1rem rgba(0, 0, 0, 0.35))
+        /* Diffuse ambient shadow */
+        drop-shadow(0 0.4rem 0.7rem rgba(0, 0, 0, 0.18));
+}
+
+
+
+@media (min-width: 600px) {
+    .group {
+        display: flex;
+    }
+}
+
+.group .block {
+    width: 100%;
+    text-align: center;
+    self-align: flex-start;
+    margin: 6rem auto;
+}
+
+@media (min-width: 600px) {
+    .group .block {
+        width: 30em;
+    }
+}
+
+
+.block h3 {
+    font-size: 1.4em;
+}
+
+.block p {
+    max-width: 18rem;
+    margin: 1rem auto;
+}
+
+.block .icon {
+    margin-bottom: 1rem;
+}
+
+/* ONE-OFF */
+.top-row {
+    padding: 4rem 0 4rem;
+}
+
+@media (min-height: 700px) and (min-width: 500px) {
+    .top-row {
+        padding: 8rem 0 5rem;
+    }
+}
+
+.try-row {
+    overflow: hidden;
+    background-color: rgba(36, 31, 49, 0.47);
+    padding: 6rem auto;
+}
+
+.bugs-row {
+    overflow: hidden;
+    background-color: #241f31;
+}
+
+.how-row {
+    overflow: hidden;
+    background-color: #241f31;
+}
+
+.banner {
+    display: block;
+    margin: 2rem auto;
+    width: 100%;
+}
+
+@media (min-width: 700px) {
+    .banner {
+        width: auto;
+        margin: 0 auto;
+    }
+}
+
+.large-button {
+    width: 12em;
+    padding: 0.9em 3em;
+    font-size: 1.2em;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1622;
+    text-align: center;
+    padding: 4em 0 4em;
+    color: white;
+    font-size: 0.9em;
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+}
+
+/* COMPONENTS */
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.subtitle {
+    display: block;
+    max-width: 20em;
+    margin: 2rem auto 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.small-print {
+    font-size: 1em;
+    text-align: center;
+    max-width: 30em;
+    margin: 1.5rem auto 3rem;
+}
+
+
+.button {
+    display: block;
+    border-radius: 99999px;
+    margin: 16px auto;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+    filter:
+        /* Sharp drop shadow */
+        drop-shadow(0 0.08rem 0.1em rgba(0, 0, 0, 0.2))
+        /* Diffuse ambient shadow */
+        drop-shadow(0 0.1rem 0.9em rgba(0, 0, 0, 0.2));
+}
+
+.button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.small.button {
+    padding: 0.6rem 2rem;
+    width: 80%;
+    margin: 1rem auto;
+    max-width: 14em;
+}
+
+@media (min-width: 1100px) {
+    .small-button {
+        width: 45%;
+    }
+}
+
+.green-button {
+    background: linear-gradient(0deg, var(--green5) 0%, var(--green3) 100%);
+    color: white;
+}
+
+.blue-button {
+    background: linear-gradient(0deg, #3584e4 0%, #62a0ea 100%);
+    color: white;
+}
+
+.white-button {
+    background: linear-gradient(0deg, #c0bfbc 0%, #f6f5f4 100%);
+    color: #241f31;
+}
+
+.gray-button {
+    background: linear-gradient(0deg, #5e5c64 0%, #9a9996 100%);
+    color: white;
+}
+
+.red-button {
+    background: linear-gradient(0deg, #c01c28 0%, #ed333b 100%);
+    color: white;
+}
+
+.button {
+    display: block;
+    border-radius: 99999px;
+    margin: 16px auto;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+    filter:
+        /* Sharp drop shadow */
+        drop-shadow(0 0.08rem 0.1em rgba(0, 0, 0, 0.2))
+        /* Diffuse ambient shadow */
+        drop-shadow(0 0.1rem 0.9em rgba(0, 0, 0, 0.2));
+}
+
+.button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.small.button {
+    padding: 0.6rem 2rem;
+    width: 80%;
+    margin: 1rem auto;
+    max-width: 14em;
+}
+
+@media (min-width: 1100px) {
+    .small-button {
+        width: 45%;
+    }
+}
+
+.green-button {
+    background: linear-gradient(0deg, var(--green5) 0%, var(--green3) 100%);
+    color: white;
+}
+
+.blue-button {
+    background: linear-gradient(0deg, #3584e4 0%, #62a0ea 100%);
+    color: white;
+}
+
+.white-button {
+    background: linear-gradient(0deg, #c0bfbc 0%, #f6f5f4 100%);
+    color: #241f31;
+}
+
+.gray-button {
+    background: linear-gradient(0deg, #5e5c64 0%, #9a9996 100%);
+    color: white;
+}
+
+.red-button {
+    background: linear-gradient(0deg, #c01c28 0%, #ed333b 100%);
+    color: white;
+}
